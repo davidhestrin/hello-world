@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    transition: background 0.5s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Loading State */
+.loading {
+    padding: 40px;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Main Content */
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.location-info {
+    margin-bottom: 25px;
+}
+
+.location {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.coordinates {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: monospace;
+}
+
+/* Local Color Section */
+.local-color {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+}
+
+.flag {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.fun-fact {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.local-time {
+    font-size: 1rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Weather Section */
+.weather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.weather-icon {
+    font-size: 2rem;
+}
+
+.weather-temp {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.weather-desc {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Error State */
+.error {
+    padding: 40px;
+}
+
+.error h2 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.error p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.error button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.error button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .card {
+        padding: 25px;
+    }
+
+    .content h1 {
+        font-size: 1.8rem;
+    }
+
+    .flag {
+        font-size: 3rem;
+    }
+}
+
+/* Theme variations based on time of day */
+body.morning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+body.afternoon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+body.evening {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+body.night {
+    background: linear-gradient(135deg, #0c0c1e 0%, #1a1a3e 100%);
+}
+
+body.night .card {
+    background: #1e1e3f;
+    color: #fff;
+}
+
+body.night .content h1,
+body.night .location,
+body.night .fun-fact {
+    color: #fff;
+}
+
+body.night .coordinates {
+    color: #aaa;
+}
+
+body.night .local-color {
+    background: linear-gradient(135deg, #2a2a5a 0%, #1e1e3f 100%);
+}
+
+body.night .weather {
+    background: #2a2a5a;
+}
+
+body.night .weather-temp {
+    color: #fff;
+}
+
+body.night .weather-desc {
+    color: #aaa;
+}

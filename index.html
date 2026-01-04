@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - From Your Location!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Finding your location...</p>
+            </div>
+
+            <div class="content" id="content" style="display: none;">
+                <h1 id="greeting"></h1>
+                <div class="location-info">
+                    <p class="location" id="location"></p>
+                    <p class="coordinates" id="coordinates"></p>
+                </div>
+                <div class="local-color" id="local-color">
+                    <div class="flag" id="flag"></div>
+                    <p class="fun-fact" id="fun-fact"></p>
+                    <p class="local-time" id="local-time"></p>
+                </div>
+                <div class="weather" id="weather"></div>
+            </div>
+
+            <div class="error" id="error" style="display: none;">
+                <h2>Oops!</h2>
+                <p id="error-message"></p>
+                <button onclick="location.reload()">Try Again</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>A dynamic Hello World experience</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
